@@ -53,12 +53,10 @@ static int json_to_json(struct spa_json *iter, const char *value, int len, struc
 		child_obj = json_object_new_string(val);
 	}
 
-	if (obj) {
-		if (json_object_is_type(obj, json_type_array)) {
-			json_object_array_add(obj, child_obj);
-		} else {
-			json_object_object_add(obj, key, child_obj);
-		}
+	if (json_object_is_type(obj, json_type_array)) {
+		json_object_array_add(obj, child_obj);
+	} else {
+		json_object_object_add(obj, key, child_obj);
 	}
 
 	return 0;
