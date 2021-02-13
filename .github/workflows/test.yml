@@ -8,5 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: cachix/install-nix-action@v12
+    # TODO: switch nixpkgs-unstable once https://github.com/NixOS/nixpkgs/pull/110615 is merged
     - name: build
-      run: NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz nix-build
+      run: NIX_PATH=nixpkgs=https://github.com/NixOS/nixpkgs/archive/7fd7f40323e0d8e21cb254f32a460c81485d1318.tar.gz nix-build
