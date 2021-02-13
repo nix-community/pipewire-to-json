@@ -1,0 +1,2 @@
+option('pipewire-config-dir', type : 'string', value : '/etc/pipewire',
+       description : '''Path to pipewire configuration used for testing''')
